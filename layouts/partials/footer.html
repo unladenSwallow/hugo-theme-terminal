@@ -1,19 +1,22 @@
 <footer class="footer">
-  <div class="footer__inner">
-    {{ if $.Site.Copyright }}
-      <div class="copyright copyright--user">
-        <span>{{ $.Site.Copyright | safeHTML }}</span>
-    {{else}}
-      <div class="copyright">
-        <span>© {{ now.Year }} Powered by <a href="http://gohugo.io">Hugo</a></span>
-    {{end}}
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
-      </div>
-  </div>
+    <div class="footer__inner" style="width:auto">
+        <figure style="padding: 0.25rem 0; margin:2rem 0; background-color: #21202c; font-size: 1rem; display:inline-block; float:left;">
+            <a href="https://github.com/unladenswallow">
+                <img style="padding-right: 0.25rem; max-width: 100%; width: auto; height: auto; float:left;" src="/images/gh.png">
+            </a>
+            <a href="https://linkedin.com/in/unladenswallow">
+                <img style="padding-right: 0.25rem; padding-left: 0.5rem; max-width: 100%; width: 3rem; height: 2rem; float:left;" src="/images/LI.png">
+            </a>
+            <a href="https://twitter.com/clumzicorn">
+                <img style="padding-right: 0.25rem; padding-left: 0.5rem; max-width: 100%; width: 3rem; height: 2rem; float:left;" src="/images/twitter.png">
+            </a>
+        </figure>
+        <div class="copyright"  style="float:right">
+            <span>© {{ now.Year }} Leslie Pedro</span>
+        </div>
+    </div>
 </footer>
 
 <script src="{{ "assets/main.js" | absURL }}"></script>
 <script src="{{ "assets/prism.js" | absURL }}"></script>
 
-<!-- Extended footer section-->
-{{ partial "extended_footer.html" . }}
