@@ -8,9 +8,9 @@
 {{ template "_internal/google_analytics.html" . }}
 
 <!-- Theme CSS -->
-<link rel="stylesheet" href="{{ "assets/style.css" | absURL }}">
+<link rel="stylesheet" href="{{ "assets/style.css" | relURL }}">
 {{ if (ne $.Site.Params.ThemeColor "orange") }}
-  <link rel="stylesheet" href="{{ (printf "assets/%s.css" $.Site.Params.ThemeColor) | absURL }}">
+  <link rel="stylesheet" href="{{ (printf "assets/%s.css" $.Site.Params.ThemeColor) | relURL }}">
 {{ end }}
 
 <!-- Custom CSS to override theme properties (/static/style.css) -->
@@ -19,11 +19,11 @@
 {{- end }}
 
 <!-- Icons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "img/apple-touch-icon-144-precomposed.png" | absURL }}">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "img/apple-touch-icon-144-precomposed.png" | relURL }}">
 {{ if isset $.Site.Params "favicon" }}
   <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
 {{ else }}
-  <link rel="shortcut icon" href="{{ printf "img/favicon/%s.png" $.Site.Params.ThemeColor | absURL }}">
+  <link rel="shortcut icon" href="{{ printf "img/favicon/%s.png" $.Site.Params.ThemeColor | relURL }}">
 {{ end }}
 
 <!-- Twitter Card -->
@@ -41,10 +41,10 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ .Title }}" />
 {{ if and (not .IsHome) (isset .Params "cover") }}
-  <meta property="og:image" content="{{ .Param "cover" | absURL }}">
+  <meta property="og:image" content="{{ .Param "cover" | relURL }}">
 {{ else }}
   {{ if isset $.Site.Params "favicon" }}
-    <meta property="og:image" content="{{ $.Site.Params.favicon | absURL }}">
+    <meta property="og:image" content="{{ $.Site.Params.favicon | relURL }}">
   {{ else }}
     <meta property="og:image" content="{{ printf "img/favicon/%s.png" $.Site.Params.ThemeColor | absURL }}">
   {{ end }}
